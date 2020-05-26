@@ -21,53 +21,42 @@ struct ContentView: View {
  
     var body: some View {
         NavigationView {
-            MasterView()
-                .navigationBarTitle(Text("Master"))
-                .navigationBarItems(
-                    leading: EditButton(),
-                    trailing: Button(
-                        action: {
-                            withAnimation { Event.create(in: self.viewContext) }
-                        }
-                    ) { 
-                        Image(systemName: "plus")
-                    }
-                )
+            LocationsView()
+                .navigationBarTitle(Text("Locaties"))
             Text("Detail view content goes here")
                 .navigationBarTitle(Text("Detail"))
         }.navigationViewStyle(DoubleColumnNavigationViewStyle())
     }
 }
 
-struct MasterView: View {
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Event.timestamp, ascending: true)], 
-        animation: .default)
-    var events: FetchedResults<Event>
+struct LocationsView: View {
+    @State var stations: [MeasuringStation] = []
 
     @Environment(\.managedObjectContext)
     var viewContext
 
     var body: some View {
         List {
-            ForEach(events, id: \.self) { event in
+            ForEach(stations, id: \.self) { station in
                 NavigationLink(
-                    destination: DetailView(event: event)
+                    destination: DetailView(station: station)
                 ) {
-                    Text("\(event.timestamp!, formatter: dateFormatter)")
+                    Text("\(station.name)")
                 }
-            }.onDelete { indices in
-                self.events.delete(at: indices, from: self.viewContext)
+            }
+        }.onAppear {
+            ApiService().getMeasuringStations { stations in
+                self.stations = stations
             }
         }
     }
 }
 
 struct DetailView: View {
-    @ObservedObject var event: Event
+    @ObservedObject var station: MeasuringStation
 
     var body: some View {
-        Text("\(event.timestamp!, formatter: dateFormatter)")
+        Text("\(station.name)")
             .navigationBarTitle(Text("Detail"))
     }
 }
