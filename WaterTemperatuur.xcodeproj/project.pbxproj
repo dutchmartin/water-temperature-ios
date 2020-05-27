@@ -8,27 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		3413407224700A8B00A42E3A /* MeasuringStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3413407124700A8B00A42E3A /* MeasuringStation.swift */; };
-		34134075247014FB00A42E3A /* MeasuringStationRowV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34134074247014FB00A42E3A /* MeasuringStationRowV.swift */; };
-		34134078247020A500A42E3A /* MainHomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34134077247020A500A42E3A /* MainHomeVM.swift */; };
 		3413407A247028E700A42E3A /* ApiModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34134079247028E700A42E3A /* ApiModels.swift */; };
 		3471C826246EC88900469724 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471C825246EC88900469724 /* AppDelegate.swift */; };
-		3471C829246EC88900469724 /* WaterTemperatuur.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3471C827246EC88900469724 /* WaterTemperatuur.xcdatamodeld */; };
 		3471C82B246EC88900469724 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471C82A246EC88900469724 /* SceneDelegate.swift */; };
 		3471C82F246EC88900469724 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471C82E246EC88900469724 /* ContentView.swift */; };
 		3471C831246EC88F00469724 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3471C830246EC88F00469724 /* Assets.xcassets */; };
 		3471C834246EC88F00469724 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3471C833246EC88F00469724 /* Preview Assets.xcassets */; };
 		3471C837246EC88F00469724 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3471C835246EC88F00469724 /* LaunchScreen.storyboard */; };
 		3471C840246ECF4200469724 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471C83F246ECF4200469724 /* ApiService.swift */; };
+		347A3374247EF443005176A4 /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A3373247EF443005176A4 /* FavoritesService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3413407124700A8B00A42E3A /* MeasuringStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasuringStation.swift; sourceTree = "<group>"; };
-		34134074247014FB00A42E3A /* MeasuringStationRowV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasuringStationRowV.swift; sourceTree = "<group>"; };
-		34134077247020A500A42E3A /* MainHomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeVM.swift; sourceTree = "<group>"; };
 		34134079247028E700A42E3A /* ApiModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModels.swift; sourceTree = "<group>"; };
 		3471C822246EC88900469724 /* WaterTemperatuur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterTemperatuur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3471C825246EC88900469724 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3471C828246EC88900469724 /* WaterTemperatuur.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WaterTemperatuur.xcdatamodel; sourceTree = "<group>"; };
 		3471C82A246EC88900469724 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3471C82E246EC88900469724 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3471C830246EC88F00469724 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,6 +31,7 @@
 		3471C836246EC88F00469724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3471C838246EC88F00469724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3471C83F246ECF4200469724 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		347A3373247EF443005176A4 /* FavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,17 +57,8 @@
 		34134073247014D900A42E3A /* view */ = {
 			isa = PBXGroup;
 			children = (
-				34134074247014FB00A42E3A /* MeasuringStationRowV.swift */,
 			);
 			path = view;
-			sourceTree = "<group>";
-		};
-		341340762470206600A42E3A /* viewModel */ = {
-			isa = PBXGroup;
-			children = (
-				34134077247020A500A42E3A /* MainHomeVM.swift */,
-			);
-			path = viewModel;
 			sourceTree = "<group>";
 		};
 		3471C819246EC88900469724 = {
@@ -93,7 +80,6 @@
 		3471C824246EC88900469724 /* WaterTemperatuur */ = {
 			isa = PBXGroup;
 			children = (
-				341340762470206600A42E3A /* viewModel */,
 				34134073247014D900A42E3A /* view */,
 				3413407024700A4F00A42E3A /* models */,
 				3471C83E246ECE8700469724 /* services */,
@@ -103,7 +89,6 @@
 				3471C830246EC88F00469724 /* Assets.xcassets */,
 				3471C835246EC88F00469724 /* LaunchScreen.storyboard */,
 				3471C838246EC88F00469724 /* Info.plist */,
-				3471C827246EC88900469724 /* WaterTemperatuur.xcdatamodeld */,
 				3471C832246EC88F00469724 /* Preview Content */,
 			);
 			path = WaterTemperatuur;
@@ -121,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				3471C83F246ECF4200469724 /* ApiService.swift */,
+				347A3373247EF443005176A4 /* FavoritesService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -196,14 +182,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34134075247014FB00A42E3A /* MeasuringStationRowV.swift in Sources */,
 				3413407A247028E700A42E3A /* ApiModels.swift in Sources */,
 				3471C82F246EC88900469724 /* ContentView.swift in Sources */,
 				3471C840246ECF4200469724 /* ApiService.swift in Sources */,
-				3471C829246EC88900469724 /* WaterTemperatuur.xcdatamodeld in Sources */,
+				347A3374247EF443005176A4 /* FavoritesService.swift in Sources */,
 				3471C826246EC88900469724 /* AppDelegate.swift in Sources */,
 				3471C82B246EC88900469724 /* SceneDelegate.swift in Sources */,
-				34134078247020A500A42E3A /* MainHomeVM.swift in Sources */,
 				3413407224700A8B00A42E3A /* MeasuringStation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,19 +382,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		3471C827246EC88900469724 /* WaterTemperatuur.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				3471C828246EC88900469724 /* WaterTemperatuur.xcdatamodel */,
-			);
-			currentVersion = 3471C828246EC88900469724 /* WaterTemperatuur.xcdatamodel */;
-			path = WaterTemperatuur.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 3471C81A246EC88900469724 /* Project object */;
 }
