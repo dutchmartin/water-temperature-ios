@@ -17,6 +17,7 @@
 		3471C837246EC88F00469724 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3471C835246EC88F00469724 /* LaunchScreen.storyboard */; };
 		3471C840246ECF4200469724 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471C83F246ECF4200469724 /* ApiService.swift */; };
 		347A3374247EF443005176A4 /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A3373247EF443005176A4 /* FavoritesService.swift */; };
+		347A3376247F0170005176A4 /* MeasuringStationsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A3375247F0170005176A4 /* MeasuringStationsList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3471C838246EC88F00469724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3471C83F246ECF4200469724 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		347A3373247EF443005176A4 /* FavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesService.swift; sourceTree = "<group>"; };
+		347A3375247F0170005176A4 /* MeasuringStationsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasuringStationsList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			children = (
 				3413407124700A8B00A42E3A /* MeasuringStation.swift */,
 				34134079247028E700A42E3A /* ApiModels.swift */,
+				347A3375247F0170005176A4 /* MeasuringStationsList.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			files = (
 				3413407A247028E700A42E3A /* ApiModels.swift in Sources */,
 				3471C82F246EC88900469724 /* ContentView.swift in Sources */,
+				347A3376247F0170005176A4 /* MeasuringStationsList.swift in Sources */,
 				3471C840246ECF4200469724 /* ApiService.swift in Sources */,
 				347A3374247EF443005176A4 /* FavoritesService.swift in Sources */,
 				3471C826246EC88900469724 /* AppDelegate.swift in Sources */,

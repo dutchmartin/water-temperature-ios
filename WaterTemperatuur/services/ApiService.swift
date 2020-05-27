@@ -20,13 +20,18 @@ public class ApiService: NSObject {
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         
         URLSession.shared.dataTask(with: request) { data, _, _ in
-//             let json = String(data: data!, encoding: String.Encoding.utf8)
-//            print("Failure Response: \(json)")
-            let features = try! JSONDecoder().decode(FeatureCollection.self, from: data!)
-        DispatchQueue.main.async {
-            completion(features)
-        }
-            
+            var featureCollection = FeatureCollection(
+                features: []
+            )
+            do {
+                featureCollection = try JSONDecoder().decode(FeatureCollection.self, from: data!)
+            }
+            catch {
+                print("An error occured parsing the JSON")
+            }
+            DispatchQueue.main.async {
+                completion(featureCollection)
+            }
         }.resume()
     }
     public func getMeasuringStations(completion: @escaping ([MeasuringStation]) -> ()) {
@@ -45,8 +50,7 @@ public class ApiService: NSObject {
                         longitude: element.geometry.coordinates[1]
                     ),
                     latestValue: element.properties.measurements[0].latestValue,
-                    latestUpdatedAt: dateFormatter.date(from: element.properties.measurements[0].dateTime)!
-                    
+                    latestUpdatedAt: dateFormatter.date(from: element.properties.measurements[0].dateTime) ?? Date()
                 ))
             }
             completion(stations)

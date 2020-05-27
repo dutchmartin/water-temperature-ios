@@ -32,7 +32,7 @@ struct ContentView: View {
 
 
 struct LocationsView: View {
-    @State var stations: [MeasuringStation] = []
+    @EnvironmentObject var stationList: MeasuringStationsList
     @EnvironmentObject var favorites: FavoritesService
 
     @Environment(\.managedObjectContext)
@@ -40,11 +40,12 @@ struct LocationsView: View {
 
     var body: some View {
         List {
-            ForEach(stations, id: \.self) { station in
+            ForEach(stationList.measuringStations, id: \.self) { station in
                 NavigationLink(
                     destination: DetailView(station: station)
                 ) {
                     Text("\(station.name)")
+                        .layoutPriority(1)
                     if self.favorites.contains(station) {
                         Spacer()
                         Image(systemName: "heart.fill")
@@ -52,10 +53,6 @@ struct LocationsView: View {
                             .foregroundColor(.red)
                     }
                 }
-            }
-        }.onAppear {
-            ApiService().getMeasuringStations { stations in
-                self.stations = stations
             }
         }
     }
@@ -79,7 +76,7 @@ struct DetailView: View {
                 } else {
                     self.favorites.add(self.station)
                 }
-            }
+            }.padding()
         }.navigationBarTitle(Text("Details"))
     }
 }

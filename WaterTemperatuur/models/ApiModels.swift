@@ -19,7 +19,7 @@ struct Feature: Decodable {
 
 // MARK: - FeatureCollection
 struct FeatureCollection: Decodable {
-    let features: [Feature]
+    public let features: [Feature]
 }
 
 // MARK: - Measurement
