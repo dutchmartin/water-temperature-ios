@@ -22,9 +22,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             LocationsView()
-                .navigationBarTitle(Text("Locaties"))
-            Text("Detail view content goes here")
-                .navigationBarTitle(Text("Detail"))
+                .navigationBarTitle(Text("Meetstations watertemperatuur"), displayMode: .inline)
         }.navigationViewStyle(DoubleColumnNavigationViewStyle())
     }
 }
@@ -56,8 +54,14 @@ struct DetailView: View {
     @ObservedObject var station: MeasuringStation
 
     var body: some View {
-        Text("\(station.name)")
-            .navigationBarTitle(Text("Detail"))
+        VStack {
+            Spacer()
+            Text("\(station.name)").bold().font(.title)
+            Spacer()
+            Text("\(station.latestValue, specifier: "%.1f")°C").font(.system(size:80))
+            Text("Last update: \(station.latestUpdatedAt)").font(.footnote).padding(3)
+            Spacer()
+        }.navigationBarTitle(Text("Details"))
     }
 }
 
